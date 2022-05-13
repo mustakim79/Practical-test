@@ -8,14 +8,20 @@
     <?php
     include 'links.html';
     ?>
-    <title>Login</title>
+    <title>Signup</title>
 
 </head>
 
 <body>
+    <?php
+
+    include 'utility.php';
+    ?>
     <div class="container">
+        <div id="msg">
+        </div>
         <div class="col-md-6 offset-md-3 mt-5">
-            <form class="g-3 needs-validation" novalidate>
+            <form method="post" class="g-3 needs-validation" id="form" novalidate>
                 <div class="card">
                     <div class="card-header">
                         <h3 class="text-center">Sign up User</h3>
@@ -43,16 +49,33 @@
                                 Valid email is required.
                             </div>
                         </div>
-
                     </div>
                     <div class="card-footer">
-                        <input type="submit" value="Submit" class="btn btn-primary float-end">
+                        <button type="submit" name="submit-btn" class="btn btn-primary float-end">Submit </button>
                     </div>
                 </div>
             </form>
+            <div class="text-center my-4">Already have account ? <a href="login.php">Login here</a></div>
         </div>
     </div>
+
     <script>
+        $(document).on('submit', '#form', function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: "insert.php",
+                type: "post",
+                data: $(this).serialize(),
+                success: function(data) {
+                    // console.log(data);
+                    $("#msg").html(data);
+                    $("#form").find('input').val('');
+                    $("#form").removeClass("was-validated");
+                }
+            });
+        });
+
+
         (function() {
             'use strict'
 
