@@ -27,3 +27,23 @@ function printmsg()
     unset($_SESSION["st"]["msg"]);
   }
 }
+function upload_file()
+{
+  if (!empty($_FILES["file"]["name"])) {
+    $filename = $_FILES["file"]["name"];
+    $path_file = $_FILES["file"]["tmp_name"];
+    $file_path = "image/" . basename($filename);
+    $ftype = $_FILES["file"]["type"];
+    if ($ftype == "image/jpeg" || $ftype == "image/jpg" || $ftype == "image/png") {
+      if (move_uploaded_file($path_file, $file_path)) {
+        return [true, "File uploaded successfulyy"];
+      } else {
+        return [false, "File is not uploaded !"];
+      }
+    } else {
+      return [false, "You can upload only image"];
+    }
+  } else {
+    return [false, "Please enter file"];
+  }
+}

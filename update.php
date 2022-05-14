@@ -40,6 +40,7 @@
                 </div>
                 <div class="col-md-6 offset-md-3 ">
                     <form action="update_product.php" method="post" enctype="multipart/form-data" class="g-3 needs-validation" id="form" novalidate>
+                        <input type="hidden" name="pid" value="<?= $_GET['pid'] ?>">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="text-center">Update Product</h3>
@@ -68,11 +69,8 @@
                                     </div>
                                 </div>
                                 <div class="my-2">
-                                    <img src="image/<?= $row['image'] ?>" alt="image" height="50">
-                                    <input type="file" class="form-control" value="<?= $row['image'] ?>" accept="image/*" id="validationimage" name="file" required>
-                                    <div class="invalid-feedback">
-                                        Please enter image.
-                                    </div>
+                                    <input type="hidden" name="imgname" value="<?= $row['image'] ?>">
+                                    <input type="file" class="form-control" accept="image/*" id="validationimage" name="file">
                                 </div>
                                 <div class="my-2">
                                     <label for="validationstatus">Status</label>
@@ -109,7 +107,6 @@
                         success: function(data) {
                             // console.log(data);
                             $("#msg").html(data).fadeIn();
-                            $("#form").find('input').val('');
                             $("#form").removeClass("was-validated");
                         }
                     });
