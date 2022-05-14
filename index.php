@@ -22,8 +22,8 @@
         <div class="container">
             <h1>Welcome <?= $_SESSION["user"] ?></h1>
             <a href="product.php" class="mt-2 mb-3 btn btn-primary">INSERT PRODUCT</a>
-            <table class="table table-bordered text-center ">
-                <thead class="text-capitalize">
+            <table class="table table-bordered text-center align-middle">
+                <thead class=" text-capitalize">
                     <tr>
                         <th>Product Name</th>
                         <th>product price </th>
@@ -32,7 +32,7 @@
                         <th>Status</th>
                         <th>Update</th>
                         <th>delete</th>
-                        <th width="10%"><a href="delete_select.php" class="btn btn-danger">delete <i class="fa fa-trash"></i></a></th>
+                        <th width=" 10%"><a href="delete_select.php" class="btn btn-danger">delete <i class="fa fa-trash"></i></a></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,10 +43,10 @@
                             <td scope="row"><?= $row["p_name"] ?></td>
                             <td><?= $row["price"] ?></td>
                             <td><?= $row["upc"] ?></td>
-                            <td><img src="image/<?= $row["image"] ?>" alt="" height="200" width="auto"></td>
+                            <td><img src="image/<?= $row["image"] ?>" alt="image" height="80"></td>
                             <td><?= $row["status"] ?></td>
-                            <td><a href="update.php?pid=<?= $row['id'] ?>" class="btn btn-primary">Update</a></td>
-                            <td><a href="delete.php?pid=<?= $row['id'] ?>" class="btn btn-primary">Delete</a></td>
+                            <td><a href="update.php?pid=<?= $row['id'] ?>" class="btn btn-success">Update</a></td>
+                            <td><a href="delete.php?pid=<?= $row['id'] ?>" class="btn btn-danger">Delete</a></td>
                             <td>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" name="data_id[]" type="checkbox" id="inlineCheckbox1" value="<?= $row['id'] ?>">
@@ -63,8 +63,12 @@
 
     <?php
     } else {
-        echo "<div class='text-center'><h1 >You can not access this file untill you are not login</h1><br>";
-        echo "<h4><a href='login.php'>Click to Login</a></h4></div>";
+    ?>
+        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; height: 100vh; background-color: #f5f5f5;">
+            <h1>You can not access this file untill you are not login</h1><br>
+            <h4><a href='login.php'>Click to Login</a></h4>
+        </div>
+    <?php
     }
     ?>
 </body>
