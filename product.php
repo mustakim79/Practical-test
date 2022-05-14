@@ -49,9 +49,9 @@
                             </div>
                             <div class="my-2">
                                 <label for="validationPrice">Price</label>
-                                <input type="number" class="form-control" step=".5" id="validationPrice" name="price" required>
+                                <input type="number" class="form-control" step=".500" id="validationPrice" name="price" required>
                                 <div class="invalid-feedback">
-                                    Please enter price.
+                                    Please enter proper price.
                                 </div>
                             </div>
                             <div class="my-2">

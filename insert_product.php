@@ -4,22 +4,6 @@ include 'connection.php';
 include 'utility.php';
 session_start();
 if (isset($_SESSION["user"])) {
-    function upload_file()
-    {
-        $filename = $_FILES["file"]["name"];
-        $path_file = $_FILES["file"]["tmp_name"];
-        $file_path = "image/" . basename($filename);
-        $ftype = $_FILES["file"]["type"];
-        if ($ftype == "image/jpeg" || $ftype == "image/jpg" || $ftype == "image/png") {
-            if (move_uploaded_file($path_file, $file_path)) {
-                return [true, "File uploaded successfulyy"];
-            } else {
-                return [false, "File is not uploaded !"];
-            }
-        } else {
-            return [false, "You can upload only image"];
-        }
-    }
     if (sizeof($_POST) >= 4 && isset($_FILES["file"])) {
         extract($_POST);
         $isfileupload = upload_file();

@@ -30,21 +30,44 @@
                     <div class="card-body">
                         <div class="my-2">
                             <label for="validationUsername">Username</label>
-                            <input type="text" class="form-control" plc id="validationUsername" name="username" required>
+                            <input type="text" class="form-control" id="validationUsername" name="username" required>
                             <div class="invalid-feedback">
                                 Please enter username.
                             </div>
                         </div>
                         <div class="my-2">
                             <label for="validationPassword">Password</label>
-                            <input type="text" class="form-control" plc id="validationPassword" name="password" required>
+                            <input type="password" class="form-control" id="validationPassword" name="password" required>
                             <div class="invalid-feedback">
                                 Please enter Password.
                             </div>
                         </div>
                         <div class="my-2">
+                            <label for="validations_que">Security Question</label>
+                            <select class="form-control" id="validations_que" name="sec_que" required>
+                                <option value="">Select Security Question</option>
+                                <option value="Your First School">Your First School</option>
+                                <option value="10th Percantage">10th Percantage</option>
+                                <option value="12th Percantage">12th Percantage</option>
+                                <option value="Father Name">Father Name</option>
+                                <option value="Mother Name">Mother Name</option>
+                                <option value="In what city were you born?">In what city were you born?</option>
+                                <option value="Your favourite place">Your favourite place</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please enter Security Question.
+                            </div>
+                        </div>
+                        <div class="my-2">
+                            <label for="validation_ans">Security Answer</label>
+                            <input type="text" class="form-control" id="validation_ans" name="sec_ans" required>
+                            <div class="invalid-feedback">
+                                Security answer is required.
+                            </div>
+                        </div>
+                        <div class="my-2">
                             <label for="validationEmail">Email</label>
-                            <input type="email" class="form-control" plc id="validationEmail" name="email" required>
+                            <input type="email" class="form-control" id="validationEmail" name="email" required>
                             <div class="invalid-feedback">
                                 Valid email is required.
                             </div>

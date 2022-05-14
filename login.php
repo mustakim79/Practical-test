@@ -71,7 +71,7 @@ if (isset($_POST['submit-btn'])) {
                         </div>
                         <div class="my-2">
                             <label for="validationPassword">Password</label>
-                            <input type="text" class="form-control" plc id="validationPassword" name="password" required>
+                            <input type="password" class="form-control" plc id="validationPassword" name="password" required>
                             <div class="invalid-feedback">
                                 Please enter Password.
                             </div>
@@ -82,7 +82,9 @@ if (isset($_POST['submit-btn'])) {
                     </div>
                 </div>
             </form>
-            <div class="text-center my-4">Don't have account ? <a href="login.php">Register</a></div>
+            <div class="text-center my-4">Don't have account ? <a href="signup.php">Register</a></div>
+            <div class="text-center my-4">Are forgot password ? <a href="forgot_password.php">Click here</a></div>
+
         </div>
     </div>
     <script>
